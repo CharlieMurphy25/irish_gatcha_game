@@ -21,7 +21,7 @@ async function openPacketScreen(containerEl, packetTypeKey) {
   // Roll happens immediately, but reveal is paced out visually below.
   // This keeps the actual game-state mutation (collectionManager call)
   // separate from the presentation timing.
-  const result = openPacketForPlayer(packetTypeKey);
+  const result = await openPacketForPlayer(packetTypeKey);
 
   showOpeningAnimation(stage, () => {
     revealCardsSequentially(stage, result.pulledCards, () => {
