@@ -1,12 +1,13 @@
 // packetOpener.js
-// The only module allowed to roll for cards. Reads packetConfig.js for odds
-// and cards.json for the pool, returns a packet result. Does NOT save
-// anything to the player's collection — that's collectionManager.js's job.
-// Keeping roll logic separate from save logic means opening a packet can be
-// previewed, retried, or unit tested without side effects.
+// The only module allowed to roll for cards. Reads packetConfig.js for odds,
+// and is given the card pool by the caller (collectionManager.js), which
+// loads cards.json via fetch since this needs to run in a browser. Returns
+// a packet result. Does NOT save anything to the player's collection —
+// that's collectionManager.js's job. Keeping roll logic separate from save
+// logic means opening a packet can be previewed, retried, or unit tested
+// without side effects.
 
-const { RARITY_ODDS, PACKET_TYPES, PITY_SYSTEM } = require('./packetConfig');
-const { cards } = require('./data/cards.json');
+import { RARITY_ODDS, PACKET_TYPES, PITY_SYSTEM } from './packetConfig.js';
 
 // Sanity check on load: catches a typo in packetConfig.js odds early,
 // rather than silently skewing drop rates in production.
@@ -28,9 +29,9 @@ function rollRarity(odds) {
   return Object.keys(odds)[0]; // fallback, should never hit
 }
 
-// Picks a random card from cards.json matching a given rarity.
-function pickCardByRarity(rarity) {
-  const pool = cards.filter(c => c.rarity === rarity);
+// Picks a random card from the given card pool matching a rarity.
+function pickCardByRarity(cardPool, rarity) {
+  const pool = cardPool.filter(c => c.rarity === rarity);
   if (pool.length === 0) {
     throw new Error(`No cards found for rarity: ${rarity}`);
   }
@@ -65,7 +66,9 @@ function applyPity(pityState, rarity) {
 
 // Main entry point. Opens one packet and returns the cards drawn plus
 // the updated pity count, leaving the caller responsible for saving both.
-function openPacket(packetTypeKey, pityState = { count: 0 }) {
+// cardPool is the full array of cards from cards.json, passed in by the
+// caller rather than loaded here, so this module has no I/O of its own.
+function openPacket(packetTypeKey, cardPool, pityState = { count: 0 }) {
   const packetType = PACKET_TYPES[packetTypeKey];
   if (!packetType) {
     throw new Error(`Unknown packet type: ${packetTypeKey}`);
@@ -85,7 +88,7 @@ function openPacket(packetTypeKey, pityState = { count: 0 }) {
     );
     currentPity = newPityCount;
 
-    const card = pickCardByRarity(finalRarity);
+    const card = pickCardByRarity(cardPool, finalRarity);
     drawnCards.push(card);
   }
 
@@ -96,7 +99,7 @@ function openPacket(packetTypeKey, pityState = { count: 0 }) {
   };
 }
 
-module.exports = {
+export {
   openPacket,
   // exported for testing / debugging individual pieces
   rollRarity,
