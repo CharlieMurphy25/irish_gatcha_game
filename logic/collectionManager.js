@@ -4,10 +4,14 @@
 // cards, knows nothing about the player) and saveState.js (raw read/write,
 // knows nothing about game rules). This file is the only place that
 // decides what a "new card" or "duplicate" actually means for the player.
+//
+// Also owns fetching cards.json, since packetOpener.js no longer loads
+// it directly (browsers can't require() a JSON file) — the card pool is
+// fetched here once and passed into openPacket().
 
-const { openPacket } = require('./packetOpener');
-const { loadCollection, saveCollection } = require('./saveState');
-const { convertDuplicateToCoins } = require('./duplicateHandler');
+import { openPacket } from './packetOpener.js';
+import { loadCollection, saveCollection } from './saveState.js';
+import { convertDuplicateToCoins } from './duplicateHandler.js';
 
 // Shape of a player's saved collection (see saveState.js for persistence):
 // {
@@ -16,12 +20,28 @@ const { convertDuplicateToCoins } = require('./duplicateHandler');
 //   coins: 150
 // }
 
+let cardPoolCache = null;
+
+// Loads and caches cards.json once per session. collectionBook.js and
+// cardDetail.js also fetch cards.json independently for rendering, since
+// each module should be able to run without depending on this one having
+// loaded first — a small amount of duplicate fetching in exchange for
+// not coupling unrelated screens together.
+async function loadCardPool() {
+  if (cardPoolCache) return cardPoolCache;
+  const response = await fetch('./data/cards.json');
+  const data = await response.json();
+  cardPoolCache = data.cards;
+  return cardPoolCache;
+}
+
 // Opens a packet, applies the results to the player's save data, and
 // returns a summary the UI layer can use to drive the reveal animation.
-function openPacketForPlayer(packetTypeKey) {
+async function openPacketForPlayer(packetTypeKey) {
   const collection = loadCollection();
+  const cardPool = await loadCardPool();
 
-  const result = openPacket(packetTypeKey, { count: collection.pityCount });
+  const result = openPacket(packetTypeKey, cardPool, { count: collection.pityCount });
 
   const pulledCards = result.cards.map(card => {
     const alreadyOwned = collection.ownedCards[card.id] > 0;
@@ -78,7 +98,7 @@ function getCollectionStats(totalCardCount) {
   };
 }
 
-module.exports = {
+export {
   openPacketForPlayer,
   getOwnershipMap,
   getOwnedCount,
