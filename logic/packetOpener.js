@@ -6,7 +6,7 @@
 // previewed, retried, or unit tested without side effects.
 
 const { RARITY_ODDS, PACKET_TYPES, PITY_SYSTEM } = require('./packetConfig');
-const { cards } = require('./cards.json');
+const { cards } = require('./data/cards.json');
 
 // Sanity check on load: catches a typo in packetConfig.js odds early,
 // rather than silently skewing drop rates in production.
