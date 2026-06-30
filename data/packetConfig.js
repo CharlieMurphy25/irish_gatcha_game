@@ -42,7 +42,7 @@ const PITY_SYSTEM = {
 // Which packet type the daily trivia reward grants by default.
 const DAILY_REWARD_PACKET = "standard";
 
-module.exports = {
+export {
   RARITY_ODDS,
   PACKET_TYPES,
   PITY_SYSTEM,
