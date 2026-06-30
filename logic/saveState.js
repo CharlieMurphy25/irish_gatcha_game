@@ -79,7 +79,7 @@ function clearCollection() {
   }
 }
 
-module.exports = {
+export {
   loadCollection,
   saveCollection,
   clearCollection,
