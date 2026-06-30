@@ -43,7 +43,7 @@ function summariseDuplicates(pulledCards) {
   };
 }
 
-module.exports = {
+export {
   DUPLICATE_COIN_VALUES,
   convertDuplicateToCoins,
   summariseDuplicates
