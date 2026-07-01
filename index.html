@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Éire Cards</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Nav bar -->
+  <nav class="nav">
+    <span class="nav-logo">🍀 Éire Cards</span>
+    <div class="nav-links">
+      <button class="nav-btn active" data-screen="home">Home</button>
+      <button class="nav-btn" data-screen="collection">Collection</button>
+    </div>
+  </nav>
+
+  <!-- Main content container — screens render into here -->
+  <main id="app" class="app-container"></main>
+
+  <script type="module">
+    import { renderCollectionBook } from './js/cardCollection.js';
+    import { openPacketScreen } from './js/packetOpeningScreen.js';
+
+    const app = document.getElementById('app');
+
+    // ── Router ──────────────────────────────────────────────────────────────
+    // Screens are rendered into #app by swapping innerHTML and calling the
+    // relevant module's render function. Add new screens here as you build
+    // them (trivia, battle, etc) — each gets a key and a render function.
+
+    async function navigate(screenKey) {
+      // Update active nav button
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.screen === screenKey);
+      });
+
+      app.innerHTML = '';
+
+      if (screenKey === 'home') {
+        renderHome();
+      } else if (screenKey === 'collection') {
+        await renderCollectionBook(app);
+      }
+    }
+
+    // ── Home screen ──────────────────────────────────────────────────────────
+    // Placeholder until triviaScreen.js exists. Shows a "open a packet"
+    // button so the card collection system can be tested end to end now.
+
+    function renderHome() {
+      app.innerHTML = `
+        <div class="home-screen">
+          <div class="home-hero">
+            <h1>Éire Cards</h1>
+            <p class="home-subtitle">Collect the icons of Ireland</p>
+          </div>
+
+          <div class="home-actions">
+            <div class="action-card">
+              <span class="action-icon">📜</span>
+              <h2>Daily Trivia</h2>
+              <p>Answer questions about Irish culture to earn card packets</p>
+              <button class="btn btn-primary" id="trivia-btn" disabled>Coming soon</button>
+            </div>
+
+            <div class="action-card">
+              <span class="action-icon">📦</span>
+              <h2>Open a Packet</h2>
+              <p>Open a standard packet and add cards to your collection</p>
+              <button class="btn btn-primary" id="open-btn">Open packet</button>
+            </div>
+
+            <div class="action-card">
+              <span class="action-icon">⚔️</span>
+              <h2>Battle</h2>
+              <p>Build a deck and challenge CPU opponents</p>
+              <button class="btn btn-primary" id="battle-btn" disabled>Coming soon</button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('open-btn').addEventListener('click', async () => {
+        app.innerHTML = '';
+        await openPacketScreen(app, 'standard');
+
+        // After the packet is opened and the player hits Continue,
+        // navigate to the collection book so they can see their new cards.
+        app.addEventListener('packet-opening-complete', () => {
+          navigate('collection');
+        }, { once: true });
+      });
+    }
+
+    // ── Nav wiring ───────────────────────────────────────────────────────────
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+      btn.addEventListener('click', () => navigate(btn.dataset.screen));
+    });
+
+    // ── Boot ─────────────────────────────────────────────────────────────────
+    navigate('home');
+  </script>
+
+</body>
+</html>
