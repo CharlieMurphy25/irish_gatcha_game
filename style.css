@@ -1,0 +1,636 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Éire Cards — style.css
+   Irish cultural palette: deep forest green, gold, cream, dark slate.
+   Rarity colours follow trading card convention: grey → blue → purple → gold.
+───────────────────────────────────────────────────────────────────────── */
+
+/* ── Tokens ──────────────────────────────────────────────────────────────── */
+:root {
+  --green-dark:   #1a3d2b;
+  --green-mid:    #2d6a4f;
+  --green-light:  #52b788;
+  --gold:         #c9a84c;
+  --gold-light:   #e8cc7a;
+  --cream:        #f5f0e8;
+  --cream-dark:   #e8e0d0;
+  --slate:        #2c2c38;
+  --slate-mid:    #44445a;
+  --text-main:    #1a1a2e;
+  --text-muted:   #5a5a72;
+  --surface:      #ffffff;
+  --surface-alt:  #f8f5ef;
+
+  --rarity-common:    #8a8a9a;
+  --rarity-rare:      #2979c8;
+  --rarity-epic:      #9c27b0;
+  --rarity-legendary: #c9a84c;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.18);
+
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-main);
+  background: var(--cream);
+}
+
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font: inherit; border: none; background: none; }
+
+/* ── Nav ─────────────────────────────────────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 56px;
+  background: var(--green-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.nav-logo {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-btn {
+  padding: 6px 16px;
+  border-radius: var(--radius-sm);
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.nav-btn.active {
+  background: var(--green-mid);
+  color: #fff;
+}
+
+/* ── App container ───────────────────────────────────────────────────────── */
+.app-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+  min-height: calc(100vh - 56px);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: filter 0.15s, transform 0.1s;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn:not(:disabled):hover { filter: brightness(1.08); }
+.btn:not(:disabled):active { transform: scale(0.97); }
+
+.btn-primary {
+  background: var(--green-mid);
+  color: #fff;
+}
+
+/* ── Home screen ─────────────────────────────────────────────────────────── */
+.home-screen { display: flex; flex-direction: column; gap: 36px; }
+
+.home-hero {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.home-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  letter-spacing: -0.02em;
+}
+
+.home-subtitle {
+  margin-top: 8px;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.home-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.action-card {
+  background: var(--surface);
+  border: 1px solid var(--cream-dark);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+.action-icon { font-size: 2rem; }
+
+.action-card h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--green-dark);
+}
+
+.action-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+/* ── Collection book ─────────────────────────────────────────────────────── */
+.collection-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.collection-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.collection-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.coin-display {
+  margin-left: auto;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.category-section { margin-bottom: 36px; }
+
+.category-section h3 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--cream-dark);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+/* ── Card tile ───────────────────────────────────────────────────────────── */
+.card-tile {
+  border-radius: var(--radius-md);
+  padding: 10px 8px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.card-tile.owned {
+  background: var(--surface);
+  border: 2px solid var(--cream-dark);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-tile.owned:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-tile.locked {
+  background: var(--cream-dark);
+  border: 2px dashed #ccc;
+  opacity: 0.6;
+}
+
+/* Rarity border colours on owned tiles */
+.card-tile.owned.rarity-common    { border-color: var(--rarity-common); }
+.card-tile.owned.rarity-rare      { border-color: var(--rarity-rare); }
+.card-tile.owned.rarity-epic      { border-color: var(--rarity-epic); }
+.card-tile.owned.rarity-legendary {
+  border-color: var(--rarity-legendary);
+  box-shadow: 0 0 8px rgba(201,168,76,0.3);
+}
+
+.card-tile img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 8px;
+  background: var(--cream-dark);
+}
+
+.silhouette {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #bbb;
+  margin: 0 auto 8px;
+}
+
+.card-name {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-rarity {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.dupe-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: var(--slate);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 20px;
+}
+
+/* ── Card detail overlay ─────────────────────────────────────────────────── */
+.card-detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 46, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.card-detail-panel {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  width: 100%;
+  max-width: 380px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  border-top: 4px solid var(--rarity-common);
+}
+
+/* Rarity accent on top border of detail panel */
+.card-detail-panel.rarity-common    { border-top-color: var(--rarity-common); }
+.card-detail-panel.rarity-rare      { border-top-color: var(--rarity-rare); }
+.card-detail-panel.rarity-epic      { border-top-color: var(--rarity-epic); }
+.card-detail-panel.rarity-legendary { border-top-color: var(--rarity-legendary); }
+
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  line-height: 1;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.15s;
+}
+
+.close-btn:hover { background: var(--cream-dark); }
+
+.detail-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 14px;
+  background: var(--cream-dark);
+}
+
+.card-detail-panel h2 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 4px;
+}
+
+.detail-meta {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.owned-count {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Stats */
+.stat-block {
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-label {
+  width: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.stat-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  width: 36px;
+}
+
+.stat-base {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Trait / Move */
+.ability-block {
+  border: 1px solid var(--cream-dark);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+
+.ability-block h3 {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--green-mid);
+  margin-bottom: 4px;
+}
+
+.ability-block p {
+  font-size: 0.85rem;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+/* Lore */
+.lore-block {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--cream-dark);
+}
+
+.lore-block p {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ── Packet opening screen ───────────────────────────────────────────────── */
+.packet-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 0;
+  min-height: 60vh;
+}
+
+.packet-icon {
+  width: 140px;
+  height: 190px;
+  background: var(--green-dark);
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-light);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.packet-icon:hover { transform: scale(1.04); }
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  20%       { transform: rotate(-4deg); }
+  40%       { transform: rotate(4deg); }
+  60%       { transform: rotate(-3deg); }
+  80%       { transform: rotate(3deg); }
+}
+
+.packet-icon.shaking {
+  animation: shake 0.6s ease-in-out infinite;
+}
+
+@keyframes burst {
+  to { transform: scale(1.3); opacity: 0; }
+}
+
+.packet-icon.bursting {
+  animation: burst 0.4s ease-out forwards;
+}
+
+/* Revealed card grid within packet stage */
+.packet-stage .reveal-card {
+  width: 120px;
+  padding: 14px 10px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 2px solid var(--cream-dark);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  animation: card-pop 0.25s ease-out;
+}
+
+@keyframes card-pop {
+  from { transform: scale(0.7) translateY(20px); opacity: 0; }
+  to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* When multiple cards are shown, lay them out in a row */
+.packet-stage {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Restore column layout for the packet icon and summary which aren't cards */
+.packet-icon,
+.packet-summary {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reveal-card img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 8px;
+  background: var(--cream-dark);
+}
+
+.reveal-card.rarity-common    { border-color: var(--rarity-common); }
+.reveal-card.rarity-rare      { border-color: var(--rarity-rare); }
+.reveal-card.rarity-epic      { border-color: var(--rarity-epic); }
+.reveal-card.rarity-legendary {
+  border-color: var(--rarity-legendary);
+  box-shadow: 0 0 14px rgba(201,168,76,0.4);
+}
+
+/* State hooks on reveal cards — visual weight handled by child badges above,
+   these exist as animation/JS hooks and future styling targets */
+.reveal-card.is-new      { }
+.reveal-card.is-duplicate { opacity: 0.85; }
+
+.new-badge {
+  display: inline-block;
+  margin-top: 6px;
+  background: var(--green-mid);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.06em;
+}
+
+.dupe-coin-badge {
+  display: inline-block;
+  margin-top: 6px;
+  background: var(--cream-dark);
+  color: var(--gold);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+/* Packet summary */
+.packet-summary {
+  text-align: center;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-md);
+  max-width: 320px;
+  width: 100%;
+}
+
+.packet-summary h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 8px;
+}
+
+.packet-summary p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.continue-btn {
+  margin-top: 20px;
+  padding: 10px 32px;
+  background: var(--green-mid);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: filter 0.15s;
+}
+
+.continue-btn:hover { filter: brightness(1.1); }
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .app-container { padding: 20px 14px 48px; }
+  .home-hero h1  { font-size: 2rem; }
+  .card-grid     { grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); }
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .packet-icon.shaking { animation: none; }
+  .reveal-card         { animation: none; }
+}
