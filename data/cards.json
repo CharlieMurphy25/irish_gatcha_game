@@ -9,18 +9,18 @@
       "image": "assets/cards/music_001_hozier.png",
       "baseStats": {
         "strength": 55,
-        "agility": 60,
-        "constitution": 50
+        "agility": 65,
+        "constitution": 52
       },
       "trait": {
         "name": "Take Me to Church",
-        "description": "Passive: all Music category cards in deck gain +5% Strength"
+        "description": "Passive: all Music cards in deck gain +5% Strength"
       },
       "move": {
         "name": "Cherry Wine",
-        "description": "Active: deals damage and lowers target Agility for 1 turn"
+        "description": "Active: deals damage and reduces target Agility for 1 turn"
       },
-      "lore": "Singer-songwriter from Bray, Co. Wicklow, known for blending blues, soul and Irish folk influences."
+      "lore": "Singer-songwriter from Bray, Co. Wicklow, blending blues, soul and Irish folk influences."
     },
     {
       "id": "music_002",
@@ -45,56 +45,518 @@
       "lore": "Blind harper and composer, often called Ireland's national composer."
     },
     {
-      "id": "historical_001",
-      "name": "Brian Boru",
-      "category": "Historical",
+      "id": "music_003",
+      "name": "Bono",
+      "category": "Music",
       "rarity": "Legendary",
       "rarityMultiplier": 1.5,
-      "image": "assets/cards/historical_001_brianboru.png",
+      "image": "assets/cards/music_003_bono.png",
       "baseStats": {
-        "strength": 70,
-        "agility": 50,
+        "strength": 68,
+        "agility": 60,
         "constitution": 75
       },
       "trait": {
-        "name": "High King",
-        "description": "Passive: all Historical category cards in deck gain +5% Constitution"
+        "name": "One",
+        "description": "Passive: if deck contains 3+ Music cards, all gain +8% Constitution"
       },
       "move": {
-        "name": "Clontarf Charge",
+        "name": "Sunday Bloody Sunday",
         "description": "Active: deals heavy damage, stuns target for 1 turn"
       },
-      "lore": "High King of Ireland, famed for his victory at the Battle of Clontarf in 1014."
+      "lore": "Lead singer of U2, one of the best-selling music artists of all time and global humanitarian."
     },
     {
-      "id": "historical_009",
-      "name": "St Brigid",
-      "category": "Historical",
-      "rarity": "Common",
-      "rarityMultiplier": 1.0,
-      "image": "assets/cards/historical_009_stbrigid.png",
+      "id": "music_004",
+      "name": "Phil Lynott",
+      "category": "Music",
+      "rarity": "Epic",
+      "rarityMultiplier": 1.3,
+      "image": "assets/cards/music_004_philynott.png",
       "baseStats": {
-        "strength": 30,
-        "agility": 40,
+        "strength": 60,
+        "agility": 68,
         "constitution": 55
       },
       "trait": {
-        "name": "Eternal Flame",
-        "description": "Passive: deck starts battle with +5% Constitution"
+        "name": "The Boys Are Back",
+        "description": "Passive: +10% Agility on first turn of battle"
       },
       "move": {
-        "name": "Brigid's Cross",
-        "description": "Active: restores Constitution to entire deck"
+        "name": "Whiskey in the Jar",
+        "description": "Active: deals damage to all opposing cards"
       },
-      "lore": "Patron saint of Ireland, associated with healing, poetry and protection."
+      "lore": "Frontman and bassist of Thin Lizzy, one of Ireland's greatest rock icons."
     },
     {
-      "id": "comedy_010",
+      "id": "music_005",
+      "name": "Sinéad O'Connor",
+      "category": "Music",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/music_005_sinead.png",
+      "baseStats": {
+        "strength": 50,
+        "agility": 52,
+        "constitution": 62
+      },
+      "trait": {
+        "name": "Nothing Compares",
+        "description": "Passive: immune to Strength debuffs"
+      },
+      "move": {
+        "name": "Fierce Voice",
+        "description": "Active: reduces target's Strength by 15% for 2 turns"
+      },
+      "lore": "Iconic Irish singer known for her powerful voice and fearless activism."
+    },
+    {
+      "id": "music_006",
+      "name": "Dolores O'Riordan",
+      "category": "Music",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/music_006_dolores.png",
+      "baseStats": {
+        "strength": 48,
+        "agility": 58,
+        "constitution": 60
+      },
+      "trait": {
+        "name": "Linger",
+        "description": "Passive: debuffs on this card last 1 fewer turn"
+      },
+      "move": {
+        "name": "Zombie",
+        "description": "Active: deals damage and lowers target Constitution for 2 turns"
+      },
+      "lore": "Lead singer of The Cranberries from Limerick, whose haunting voice defined 1990s alternative rock."
+    },
+    {
+      "id": "music_007",
+      "name": "Luke Kelly",
+      "category": "Music",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/music_007_lukekelly.png",
+      "baseStats": {
+        "strength": 38,
+        "agility": 42,
+        "constitution": 55
+      },
+      "trait": {
+        "name": "The People's Voice",
+        "description": "Passive: +5% Constitution to all ally cards at battle start"
+      },
+      "move": {
+        "name": "Raglan Road",
+        "description": "Active: restores Constitution to lowest-health ally card"
+      },
+      "lore": "Founding member of The Dubliners, beloved for his powerful tenor and passionate folk performances."
+    },
+    {
+      "id": "music_008",
+      "name": "Christy Moore",
+      "category": "Music",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/music_008_christymoore.png",
+      "baseStats": {
+        "strength": 35,
+        "agility": 40,
+        "constitution": 58
+      },
+      "trait": {
+        "name": "Ordinary Man",
+        "description": "Passive: gains +3% Strength for each Common ally in deck"
+      },
+      "move": {
+        "name": "Ride On",
+        "description": "Active: boosts own Agility for 2 turns"
+      },
+      "lore": "Legendary Irish folk singer and founding member of Planxty and Moving Hearts."
+    },
+    {
+      "id": "music_009",
+      "name": "Ronan Keating",
+      "category": "Music",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/music_009_ronankeating.png",
+      "baseStats": {
+        "strength": 28,
+        "agility": 48,
+        "constitution": 42
+      },
+      "trait": {
+        "name": "Life is a Rollercoaster",
+        "description": "Passive: if this card's health drops below 30%, Agility increases by 10%"
+      },
+      "move": {
+        "name": "When You Say Nothing",
+        "description": "Active: silences target, preventing their move next turn"
+      },
+      "lore": "Rose to fame as a member of Boyzone before launching a successful solo career."
+    },
+    {
+      "id": "music_010",
+      "name": "Seán O'Riada",
+      "category": "Music",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/music_010_seanoriada.png",
+      "baseStats": {
+        "strength": 30,
+        "agility": 38,
+        "constitution": 52
+      },
+      "trait": {
+        "name": "Ceoltóirí Revival",
+        "description": "Passive: the first Traditional category ally played each battle gains +10% Constitution"
+      },
+      "move": {
+        "name": "Mise Éire",
+        "description": "Active: boosts Constitution of all ally cards by 5%"
+      },
+      "lore": "Composer and musician who revolutionised Irish traditional music through Ceoltóirí Chualann."
+    },
+    {
+      "id": "sports_001",
+      "name": "Roy Keane",
+      "category": "Sports",
+      "rarity": "Legendary",
+      "rarityMultiplier": 1.5,
+      "image": "assets/cards/sports_001_roykeane.png",
+      "baseStats": {
+        "strength": 80,
+        "agility": 62,
+        "constitution": 72
+      },
+      "trait": {
+        "name": "Driven",
+        "description": "Passive: this card deals +10% damage when below 50% health"
+      },
+      "move": {
+        "name": "The Tackle",
+        "description": "Active: deals heavy damage and reduces target Agility by 20% for 1 turn"
+      },
+      "lore": "Cork-born midfielder widely regarded as one of the greatest players in Premier League history."
+    },
+    {
+      "id": "sports_002",
+      "name": "Katie Taylor",
+      "category": "Sports",
+      "rarity": "Epic",
+      "rarityMultiplier": 1.3,
+      "image": "assets/cards/sports_002_katietaylor.png",
+      "baseStats": {
+        "strength": 70,
+        "agility": 72,
+        "constitution": 60
+      },
+      "trait": {
+        "name": "Undisputed",
+        "description": "Passive: +10% Strength when facing a card with higher Strength"
+      },
+      "move": {
+        "name": "The Bray Bomber",
+        "description": "Active: deals damage twice in one turn"
+      },
+      "lore": "Olympic gold medallist and undisputed lightweight boxing world champion from Bray, Co. Wicklow."
+    },
+    {
+      "id": "sports_003",
+      "name": "Robbie Keane",
+      "category": "Sports",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/sports_003_robbiekeane.png",
+      "baseStats": {
+        "strength": 58,
+        "agility": 65,
+        "constitution": 52
+      },
+      "trait": {
+        "name": "Cartwheel Celebration",
+        "description": "Passive: on a knockout win, restore 10% Constitution to next ally card"
+      },
+      "move": {
+        "name": "Clinical Finish",
+        "description": "Active: high accuracy attack, rarely misses"
+      },
+      "lore": "Ireland's all-time top scorer with 68 international goals across a 16-year career."
+    },
+    {
+      "id": "sports_004",
+      "name": "Sonia O'Sullivan",
+      "category": "Sports",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/sports_004_soniaosullivan.png",
+      "baseStats": {
+        "strength": 48,
+        "agility": 72,
+        "constitution": 58
+      },
+      "trait": {
+        "name": "Distance Runner",
+        "description": "Passive: this card loses 20% less Constitution per turn"
+      },
+      "move": {
+        "name": "Final Sprint",
+        "description": "Active: massive Agility boost on the last turn of battle"
+      },
+      "lore": "Cork athlete and world champion distance runner, one of Ireland's greatest ever Olympians."
+    },
+    {
+      "id": "sports_005",
+      "name": "Johnny Sexton",
+      "category": "Sports",
+      "rarity": "Epic",
+      "rarityMultiplier": 1.3,
+      "image": "assets/cards/sports_005_johnnysexton.png",
+      "baseStats": {
+        "strength": 58,
+        "agility": 64,
+        "constitution": 68
+      },
+      "trait": {
+        "name": "Drop Goal",
+        "description": "Passive: 20% chance to deal bonus damage on any attack"
+      },
+      "move": {
+        "name": "Le Drop",
+        "description": "Active: guaranteed bonus damage regardless of target's defence"
+      },
+      "lore": "Dublin-born rugby out-half, World Rugby Player of the Year and Lions captain."
+    },
+    {
+      "id": "sports_006",
+      "name": "Ronan O'Gara",
+      "category": "Sports",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/sports_006_ronanogara.png",
+      "baseStats": {
+        "strength": 50,
+        "agility": 60,
+        "constitution": 65
+      },
+      "trait": {
+        "name": "Precision Kicker",
+        "description": "Passive: moves always deal their stated damage with no variance"
+      },
+      "move": {
+        "name": "The Conversion",
+        "description": "Active: restores Constitution to self and one ally"
+      },
+      "lore": "Cork-born fly-half and Ireland and Munster legend, now a celebrated international coach."
+    },
+    {
+      "id": "sports_007",
+      "name": "Shane Lowry",
+      "category": "Sports",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/sports_007_shanelowry.png",
+      "baseStats": {
+        "strength": 40,
+        "agility": 42,
+        "constitution": 55
+      },
+      "trait": {
+        "name": "The Open Champion",
+        "description": "Passive: +8% Strength in the final round of a battle series"
+      },
+      "move": {
+        "name": "Royal Portrush",
+        "description": "Active: increases own Constitution for 2 turns"
+      },
+      "lore": "Clara, Co. Offaly golfer who won The Open Championship at Royal Portrush in 2019."
+    },
+    {
+      "id": "sports_008",
+      "name": "Rhasidat Adeleke",
+      "category": "Sports",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/sports_008_rhasidat.png",
+      "baseStats": {
+        "strength": 38,
+        "agility": 75,
+        "constitution": 42
+      },
+      "trait": {
+        "name": "Sprinter",
+        "description": "Passive: always acts first on turn 1 regardless of Agility comparison"
+      },
+      "move": {
+        "name": "400m Burst",
+        "description": "Active: deals damage scaled to this card's Agility stat"
+      },
+      "lore": "Dublin-born sprinter competing for Ireland, one of the fastest 400m runners in the world."
+    },
+    {
+      "id": "sports_009",
+      "name": "Seamus Coleman",
+      "category": "Sports",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/sports_009_seamuscoleman.png",
+      "baseStats": {
+        "strength": 40,
+        "agility": 58,
+        "constitution": 50
+      },
+      "trait": {
+        "name": "Donegal Warrior",
+        "description": "Passive: takes 10% less damage from Agility-based attacks"
+      },
+      "move": {
+        "name": "Overlap Run",
+        "description": "Active: boosts own Agility for 2 turns and deals light damage"
+      },
+      "lore": "Donegal-born defender and Ireland captain, a model of consistency for club and country."
+    },
+    {
+      "id": "sports_010",
+      "name": "Katie McCabe",
+      "category": "Sports",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/sports_010_katiemccabe.png",
+      "baseStats": {
+        "strength": 42,
+        "agility": 60,
+        "constitution": 48
+      },
+      "trait": {
+        "name": "Captain's Armband",
+        "description": "Passive: all ally cards gain +3% Strength while this card is active"
+      },
+      "move": {
+        "name": "Rabona Cross",
+        "description": "Active: unpredictable attack, deals 50% or 150% damage with equal chance"
+      },
+      "lore": "Dublin-born winger and Ireland captain, one of the most exciting players in women's football."
+    },
+    {
+      "id": "comedy_001",
+      "name": "Dermot Morgan",
+      "category": "Comedy",
+      "rarity": "Legendary",
+      "rarityMultiplier": 1.5,
+      "image": "assets/cards/comedy_001_dermotmorgan.png",
+      "baseStats": {
+        "strength": 65,
+        "agility": 68,
+        "constitution": 72
+      },
+      "trait": {
+        "name": "Father Ted",
+        "description": "Passive: opposing cards have a 15% chance to miss their move each turn"
+      },
+      "move": {
+        "name": "That Would Be An Ecumenical Matter",
+        "description": "Active: confuses target, reducing their Strength and Agility by 10% for 2 turns"
+      },
+      "lore": "Beloved Irish comedian and actor, immortalised as Father Ted Crilly in the iconic sitcom."
+    },
+    {
+      "id": "comedy_002",
+      "name": "Dara Ó Briain",
+      "category": "Comedy",
+      "rarity": "Epic",
+      "rarityMultiplier": 1.3,
+      "image": "assets/cards/comedy_002_daraobriain.png",
+      "baseStats": {
+        "strength": 52,
+        "agility": 70,
+        "constitution": 58
+      },
+      "trait": {
+        "name": "Mock the Week",
+        "description": "Passive: gains +5% Agility each turn this card is in play"
+      },
+      "move": {
+        "name": "Science Rant",
+        "description": "Active: deals damage, ignores 20% of target's Constitution"
+      },
+      "lore": "Wicklow comedian, Mock the Week host, and science enthusiast known for his rapid-fire delivery."
+    },
+    {
+      "id": "comedy_003",
+      "name": "Graham Norton",
+      "category": "Comedy",
+      "rarity": "Epic",
+      "rarityMultiplier": 1.3,
+      "image": "assets/cards/comedy_003_grahamnorton.png",
+      "baseStats": {
+        "strength": 50,
+        "agility": 68,
+        "constitution": 60
+      },
+      "trait": {
+        "name": "Big Red Chair",
+        "description": "Passive: 20% chance to flip a target card's last used move back at them"
+      },
+      "move": {
+        "name": "Celebrity Gossip",
+        "description": "Active: reveals target's weakest stat, dealing bonus damage to it"
+      },
+      "lore": "Cork-born chat show host whose BAFTA-winning show is one of Britain's most watched."
+    },
+    {
+      "id": "comedy_004",
+      "name": "Aisling Bea",
+      "category": "Comedy",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/comedy_004_aislingbea.png",
+      "baseStats": {
+        "strength": 45,
+        "agility": 65,
+        "constitution": 55
+      },
+      "trait": {
+        "name": "This Way Up",
+        "description": "Passive: recovers 8% Constitution when a battle turn ends without taking damage"
+      },
+      "move": {
+        "name": "Sharp Tongue",
+        "description": "Active: reduces target Agility by 18% for 2 turns"
+      },
+      "lore": "Kildare comedian, writer and actor known for her wit and the semi-autobiographical series This Way Up."
+    },
+    {
+      "id": "comedy_005",
+      "name": "Chris O'Dowd",
+      "category": "Comedy",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/comedy_005_chrisodowd.png",
+      "baseStats": {
+        "strength": 42,
+        "agility": 60,
+        "constitution": 58
+      },
+      "trait": {
+        "name": "IT Crowd",
+        "description": "Passive: if targeted by an Epic or Legendary card, take 15% less damage"
+      },
+      "move": {
+        "name": "Have You Tried Turning It Off",
+        "description": "Active: resets target card's last stat change, restoring it to base"
+      },
+      "lore": "Roscommon actor known for The IT Crowd, Bridesmaids, and Moone Boy."
+    },
+    {
+      "id": "comedy_006",
       "name": "Joanne McNally",
       "category": "Comedy",
       "rarity": "Common",
-      "rarityMultiplier": 1.0,
-      "image": "assets/cards/comedy_010_mcnally.png",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/comedy_006_joannemcnally.png",
       "baseStats": {
         "strength": 30,
         "agility": 55,
@@ -102,13 +564,981 @@
       },
       "trait": {
         "name": "Quick Wit",
-        "description": "Passive: +10% Agility when card health is below 50%"
+        "description": "Passive: +10% Agility when this card's health drops below 50%"
       },
       "move": {
         "name": "Prosecco Express",
-        "description": "Active: lowers target Strength for 2 turns"
+        "description": "Active: reduces target Strength for 2 turns"
       },
-      "lore": "Comedian and podcaster known for The Prosecco Express."
+      "lore": "Comedian and podcaster known for My Therapist Ghosted Me and The Prosecco Express tour."
+    },
+    {
+      "id": "comedy_007",
+      "name": "David O'Doherty",
+      "category": "Comedy",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/comedy_007_davidodoherty.png",
+      "baseStats": {
+        "strength": 35,
+        "agility": 62,
+        "constitution": 55
+      },
+      "trait": {
+        "name": "Tiny Piano",
+        "description": "Passive: this card costs no resources to play from reserve"
+      },
+      "move": {
+        "name": "Deadpan",
+        "description": "Active: target loses 10% Agility and is confused for 1 turn"
+      },
+      "lore": "Dublin comedian and three-time Edinburgh Comedy Award nominee, beloved for his lo-fi style."
+    },
+    {
+      "id": "comedy_008",
+      "name": "Blindboy Boatclub",
+      "category": "Comedy",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/comedy_008_blindboy.png",
+      "baseStats": {
+        "strength": 32,
+        "agility": 50,
+        "constitution": 45
+      },
+      "trait": {
+        "name": "Plastic Bag",
+        "description": "Passive: immune to identity-reveal effects"
+      },
+      "move": {
+        "name": "Podcast Rant",
+        "description": "Active: deals moderate damage, bypasses 10% of target's Constitution"
+      },
+      "lore": "Limerick artist, podcaster, and one half of The Rubberbandits, famous for their satirical comedy."
+    },
+    {
+      "id": "comedy_009",
+      "name": "Ryan Carrick",
+      "category": "Comedy",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/comedy_009_ryancarrick.png",
+      "baseStats": {
+        "strength": 28,
+        "agility": 52,
+        "constitution": 40
+      },
+      "trait": {
+        "name": "Going Viral",
+        "description": "Passive: first move each battle deals +15% damage"
+      },
+      "move": {
+        "name": "Content Drop",
+        "description": "Active: boosts own Agility for 1 turn"
+      },
+      "lore": "Irish TikTok creator known for his comedy sketches and viral content."
+    },
+    {
+      "id": "comedy_010",
+      "name": "Ross McCartney",
+      "category": "Comedy",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/comedy_010_rossmccartney.png",
+      "baseStats": {
+        "strength": 27,
+        "agility": 50,
+        "constitution": 38
+      },
+      "trait": {
+        "name": "Relatable",
+        "description": "Passive: gains +5% Constitution for each Common ally already played this battle"
+      },
+      "move": {
+        "name": "Slice of Life",
+        "description": "Active: deals light damage, heals own Constitution by the same amount"
+      },
+      "lore": "Irish TikTok and social media creator known for relatable everyday comedy."
+    },
+    {
+      "id": "arts_001",
+      "name": "James Joyce",
+      "category": "Arts",
+      "rarity": "Legendary",
+      "rarityMultiplier": 1.5,
+      "image": "assets/cards/arts_001_jamesjoyce.png",
+      "baseStats": {
+        "strength": 65,
+        "agility": 48,
+        "constitution": 82
+      },
+      "trait": {
+        "name": "Stream of Consciousness",
+        "description": "Passive: this card's moves cannot be predicted or countered"
+      },
+      "move": {
+        "name": "Ulysses",
+        "description": "Active: overwhelms target with complexity, dealing damage that ignores Constitution"
+      },
+      "lore": "Dublin-born author of Ulysses and Dubliners, one of the most influential writers in history."
+    },
+    {
+      "id": "arts_002",
+      "name": "Samuel Beckett",
+      "category": "Arts",
+      "rarity": "Epic",
+      "rarityMultiplier": 1.3,
+      "image": "assets/cards/arts_002_samuelbeckett.png",
+      "baseStats": {
+        "strength": 58,
+        "agility": 44,
+        "constitution": 74
+      },
+      "trait": {
+        "name": "Waiting",
+        "description": "Passive: if this card does not attack for 1 turn, gains +20% Strength next turn"
+      },
+      "move": {
+        "name": "Nothing to be Done",
+        "description": "Active: reduces target's Agility to minimum for 1 turn"
+      },
+      "lore": "Nobel Prize-winning playwright from Dublin, author of Waiting for Godot."
+    },
+    {
+      "id": "arts_003",
+      "name": "Oscar Wilde",
+      "category": "Arts",
+      "rarity": "Epic",
+      "rarityMultiplier": 1.3,
+      "image": "assets/cards/arts_003_oscarwilde.png",
+      "baseStats": {
+        "strength": 55,
+        "agility": 60,
+        "constitution": 65
+      },
+      "trait": {
+        "name": "The Wit",
+        "description": "Passive: after taking damage, deal 10% of that damage back to attacker"
+      },
+      "move": {
+        "name": "The Importance of Being",
+        "description": "Active: distracts target, causing them to skip their next move"
+      },
+      "lore": "Dublin-born playwright, poet and wit, author of The Importance of Being Earnest."
+    },
+    {
+      "id": "arts_004",
+      "name": "WB Yeats",
+      "category": "Arts",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/arts_004_wbyeats.png",
+      "baseStats": {
+        "strength": 45,
+        "agility": 42,
+        "constitution": 70
+      },
+      "trait": {
+        "name": "The Celtic Twilight",
+        "description": "Passive: Historical ally cards in deck gain +5% Constitution"
+      },
+      "move": {
+        "name": "The Second Coming",
+        "description": "Active: massive Constitution boost to self"
+      },
+      "lore": "Nobel Prize-winning poet from Sligo, a central figure of the Irish Literary Revival."
+    },
+    {
+      "id": "arts_005",
+      "name": "Seamus Heaney",
+      "category": "Arts",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/arts_005_seamusheaney.png",
+      "baseStats": {
+        "strength": 42,
+        "agility": 40,
+        "constitution": 68
+      },
+      "trait": {
+        "name": "Digging",
+        "description": "Passive: Constitution cannot be reduced below 30% by opposing moves"
+      },
+      "move": {
+        "name": "Bog Poem",
+        "description": "Active: roots target in place, preventing Agility use for 1 turn"
+      },
+      "lore": "Nobel Prize-winning poet from Co. Derry, renowned for his earthy and lyrical verse."
+    },
+    {
+      "id": "arts_006",
+      "name": "Bram Stoker",
+      "category": "Arts",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/arts_006_bramstoker.png",
+      "baseStats": {
+        "strength": 50,
+        "agility": 44,
+        "constitution": 62
+      },
+      "trait": {
+        "name": "Dracula",
+        "description": "Passive: each time this card deals damage, heals 5% of that as own Constitution"
+      },
+      "move": {
+        "name": "The Count Rises",
+        "description": "Active: drains Constitution from target and adds it to self"
+      },
+      "lore": "Dublin-born author who created Dracula, one of the most enduring figures in horror fiction."
+    },
+    {
+      "id": "arts_007",
+      "name": "Edna O'Brien",
+      "category": "Arts",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/arts_007_ednaobrien.png",
+      "baseStats": {
+        "strength": 35,
+        "agility": 38,
+        "constitution": 60
+      },
+      "trait": {
+        "name": "Banned Books",
+        "description": "Passive: moves cannot be blocked or deflected"
+      },
+      "move": {
+        "name": "Country Girls",
+        "description": "Active: reduces target Strength by 12% for 2 turns"
+      },
+      "lore": "Co. Clare novelist and playwright, a pioneering voice in Irish women's writing."
+    },
+    {
+      "id": "arts_008",
+      "name": "Patrick Kavanagh",
+      "category": "Arts",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/arts_008_patrickkavanagh.png",
+      "baseStats": {
+        "strength": 32,
+        "agility": 35,
+        "constitution": 58
+      },
+      "trait": {
+        "name": "The Great Hunger",
+        "description": "Passive: this card's Constitution slowly increases each turn it is not attacked"
+      },
+      "move": {
+        "name": "Canal Bank Walk",
+        "description": "Active: restores own Constitution and removes one debuff"
+      },
+      "lore": "Monaghan poet who captured rural Irish life, a major influence on Seamus Heaney."
+    },
+    {
+      "id": "arts_009",
+      "name": "Claire Keegan",
+      "category": "Arts",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/arts_009_clairekeegan.png",
+      "baseStats": {
+        "strength": 30,
+        "agility": 36,
+        "constitution": 55
+      },
+      "trait": {
+        "name": "Small Things",
+        "description": "Passive: deals +10% damage to Legendary rarity cards"
+      },
+      "move": {
+        "name": "Foster",
+        "description": "Active: restores Constitution to the lowest-health ally card"
+      },
+      "lore": "Wicklow-born short story writer, acclaimed for Foster and Small Things Like These."
+    },
+    {
+      "id": "arts_010",
+      "name": "Alice Kinsella",
+      "category": "Arts",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/arts_010_alicekinsella.png",
+      "baseStats": {
+        "strength": 28,
+        "agility": 34,
+        "constitution": 52
+      },
+      "trait": {
+        "name": "Eggshells",
+        "description": "Passive: if this card would be knocked out, survive once with 1% Constitution"
+      },
+      "move": {
+        "name": "Lyric Essay",
+        "description": "Active: deals moderate damage, ignoring 15% of target's Constitution"
+      },
+      "lore": "Dublin poet and Irish Times columnist, winner of the Farmgate Café National Poetry Award."
+    },
+    {
+      "id": "historical_001",
+      "name": "Brian Boru",
+      "category": "Historical",
+      "rarity": "Legendary",
+      "rarityMultiplier": 1.5,
+      "image": "assets/cards/historical_001_brianboru.png",
+      "baseStats": {
+        "strength": 78,
+        "agility": 50,
+        "constitution": 80
+      },
+      "trait": {
+        "name": "High King",
+        "description": "Passive: all Historical cards in deck gain +5% Constitution"
+      },
+      "move": {
+        "name": "Clontarf Charge",
+        "description": "Active: deals heavy damage and stuns target for 1 turn"
+      },
+      "lore": "High King of Ireland, who united the country's kingdoms and defeated the Vikings at Clontarf in 1014."
+    },
+    {
+      "id": "historical_002",
+      "name": "Michael Collins",
+      "category": "Historical",
+      "rarity": "Epic",
+      "rarityMultiplier": 1.3,
+      "image": "assets/cards/historical_002_michaelcollins.png",
+      "baseStats": {
+        "strength": 70,
+        "agility": 72,
+        "constitution": 62
+      },
+      "trait": {
+        "name": "The Big Fella",
+        "description": "Passive: this card cannot be targeted by opposing moves on turn 1"
+      },
+      "move": {
+        "name": "Squad Intelligence",
+        "description": "Active: deals damage and reveals target's lowest stat for 2 turns"
+      },
+      "lore": "Cork-born revolutionary, architect of the Irish War of Independence and founder of modern Irish intelligence."
+    },
+    {
+      "id": "historical_003",
+      "name": "Constance Markievicz",
+      "category": "Historical",
+      "rarity": "Epic",
+      "rarityMultiplier": 1.3,
+      "image": "assets/cards/historical_003_markievicz.png",
+      "baseStats": {
+        "strength": 65,
+        "agility": 68,
+        "constitution": 65
+      },
+      "trait": {
+        "name": "First Elected",
+        "description": "Passive: ally cards gain +5% Agility when this card is in play"
+      },
+      "move": {
+        "name": "Easter Rising",
+        "description": "Active: deals damage to all opposing cards simultaneously"
+      },
+      "lore": "Sligo-born revolutionary and the first woman elected to Westminster, though she did not take her seat."
+    },
+    {
+      "id": "historical_004",
+      "name": "Éamon de Valera",
+      "category": "Historical",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/historical_004_devalera.png",
+      "baseStats": {
+        "strength": 55,
+        "agility": 45,
+        "constitution": 72
+      },
+      "trait": {
+        "name": "The Long Fellow",
+        "description": "Passive: Constitution losses are reduced by 10%"
+      },
+      "move": {
+        "name": "Constitutional Vision",
+        "description": "Active: reduces all opposing cards' Constitution by 8% for 2 turns"
+      },
+      "lore": "Dominant political figure of 20th century Ireland, founder of Fianna Fáil and architect of the 1937 Constitution."
+    },
+    {
+      "id": "historical_005",
+      "name": "Ernest Shackleton",
+      "category": "Historical",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/historical_005_shackleton.png",
+      "baseStats": {
+        "strength": 60,
+        "agility": 55,
+        "constitution": 70
+      },
+      "trait": {
+        "name": "Endurance",
+        "description": "Passive: this card cannot be knocked out in a single hit regardless of damage"
+      },
+      "move": {
+        "name": "Antarctic Crossing",
+        "description": "Active: ignores all opposing buffs for 1 turn when dealing damage"
+      },
+      "lore": "Kildare-born Antarctic explorer who led the legendary Endurance expedition of 1914-17."
+    },
+    {
+      "id": "historical_006",
+      "name": "Daniel O'Connell",
+      "category": "Historical",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/historical_006_danieloconnell.png",
+      "baseStats": {
+        "strength": 50,
+        "agility": 52,
+        "constitution": 68
+      },
+      "trait": {
+        "name": "The Liberator",
+        "description": "Passive: all ally cards take 8% less damage from Strength-based attacks"
+      },
+      "move": {
+        "name": "Monster Meeting",
+        "description": "Active: reduces all opposing cards' Agility by 10% for 2 turns"
+      },
+      "lore": "Kerry-born political leader who won Catholic Emancipation through mass peaceful mobilisation."
+    },
+    {
+      "id": "historical_007",
+      "name": "James Connolly",
+      "category": "Historical",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/historical_007_jamesconnolly.png",
+      "baseStats": {
+        "strength": 55,
+        "agility": 48,
+        "constitution": 58
+      },
+      "trait": {
+        "name": "Labour and Nation",
+        "description": "Passive: Common ally cards gain +5% Strength"
+      },
+      "move": {
+        "name": "GPO Stand",
+        "description": "Active: this card takes all damage directed at the lowest-health ally for 1 turn"
+      },
+      "lore": "Trade union leader and co-commander of the 1916 Easter Rising, executed by firing squad."
+    },
+    {
+      "id": "historical_008",
+      "name": "St Patrick",
+      "category": "Historical",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/historical_008_stpatrick.png",
+      "baseStats": {
+        "strength": 38,
+        "agility": 42,
+        "constitution": 62
+      },
+      "trait": {
+        "name": "Patron Saint",
+        "description": "Passive: restores 5% Constitution to all ally cards at battle start"
+      },
+      "move": {
+        "name": "Drive Out the Snakes",
+        "description": "Active: removes all debuffs from all ally cards"
+      },
+      "lore": "Patron saint of Ireland, credited with bringing Christianity to the island in the 5th century."
+    },
+    {
+      "id": "historical_009",
+      "name": "St Brigid",
+      "category": "Historical",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/historical_009_stbrigid.png",
+      "baseStats": {
+        "strength": 30,
+        "agility": 40,
+        "constitution": 58
+      },
+      "trait": {
+        "name": "Eternal Flame",
+        "description": "Passive: deck starts battle with +5% Constitution across all cards"
+      },
+      "move": {
+        "name": "Brigid's Cross",
+        "description": "Active: restores Constitution to the entire ally deck"
+      },
+      "lore": "Patron saint of Ireland alongside Patrick, associated with healing, poetry and protection."
+    },
+    {
+      "id": "historical_010",
+      "name": "Queen Maeve",
+      "category": "Historical",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/historical_010_queenmaeve.png",
+      "baseStats": {
+        "strength": 52,
+        "agility": 55,
+        "constitution": 48
+      },
+      "trait": {
+        "name": "Warrior Queen",
+        "description": "Passive: +8% Strength when this card is the last ally card remaining"
+      },
+      "move": {
+        "name": "Cattle Raid of Cooley",
+        "description": "Active: deals damage and steals 10% of target's Strength for 2 turns"
+      },
+      "lore": "Legendary queen of Connacht from Irish mythology, central figure of the Táin Bó Cúailnge."
+    },
+    {
+      "id": "politics_001",
+      "name": "Mary Robinson",
+      "category": "Politics",
+      "rarity": "Legendary",
+      "rarityMultiplier": 1.5,
+      "image": "assets/cards/politics_001_maryrobinson.png",
+      "baseStats": {
+        "strength": 68,
+        "agility": 55,
+        "constitution": 78
+      },
+      "trait": {
+        "name": "Light in the Window",
+        "description": "Passive: all ally cards gain +8% Constitution while this card is in play"
+      },
+      "move": {
+        "name": "Human Rights",
+        "description": "Active: removes all debuffs from ally deck and reduces target Strength by 10%"
+      },
+      "lore": "Ireland's first female President and UN High Commissioner for Human Rights, a transformative figure."
+    },
+    {
+      "id": "politics_002",
+      "name": "John Hume",
+      "category": "Politics",
+      "rarity": "Epic",
+      "rarityMultiplier": 1.3,
+      "image": "assets/cards/politics_002_johnhume.png",
+      "baseStats": {
+        "strength": 58,
+        "agility": 52,
+        "constitution": 72
+      },
+      "trait": {
+        "name": "Nobel Peace",
+        "description": "Passive: opposing cards deal 10% less damage while this card is active"
+      },
+      "move": {
+        "name": "Good Friday",
+        "description": "Active: neutralises the target's current active buffs"
+      },
+      "lore": "Derry-born SDLP leader and Nobel Peace Prize laureate, central architect of the Good Friday Agreement."
+    },
+    {
+      "id": "politics_003",
+      "name": "Mary McAleese",
+      "category": "Politics",
+      "rarity": "Epic",
+      "rarityMultiplier": 1.3,
+      "image": "assets/cards/politics_003_marymcaleese.png",
+      "baseStats": {
+        "strength": 58,
+        "agility": 55,
+        "constitution": 70
+      },
+      "trait": {
+        "name": "Building Bridges",
+        "description": "Passive: if deck contains both Republic and Northern cards, all gain +5% Constitution"
+      },
+      "move": {
+        "name": "Reconciliation",
+        "description": "Active: restores 15% Constitution to all ally cards"
+      },
+      "lore": "Belfast-born second female President of Ireland, known for her work on cross-community reconciliation."
+    },
+    {
+      "id": "politics_004",
+      "name": "Gerry Adams",
+      "category": "Politics",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/politics_004_gerryadams.png",
+      "baseStats": {
+        "strength": 58,
+        "agility": 50,
+        "constitution": 65
+      },
+      "trait": {
+        "name": "Long Game",
+        "description": "Passive: this card gains +3% Constitution each turn it survives"
+      },
+      "move": {
+        "name": "Peace Process",
+        "description": "Active: reduces target Strength by 12% for 2 turns"
+      },
+      "lore": "Belfast-born Sinn Féin president who played a central and controversial role in the Northern Irish peace process."
+    },
+    {
+      "id": "politics_005",
+      "name": "Charles Haughey",
+      "category": "Politics",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/politics_005_charleshaughey.png",
+      "baseStats": {
+        "strength": 62,
+        "agility": 58,
+        "constitution": 62
+      },
+      "trait": {
+        "name": "Celtic Tiger Seed",
+        "description": "Passive: coin rewards from this battle are increased by 20%"
+      },
+      "move": {
+        "name": "Man of Destiny",
+        "description": "Active: deals heavy damage with a 20% chance of backfiring on self"
+      },
+      "lore": "Controversial three-time Taoiseach whose economic policies laid groundwork for the Celtic Tiger."
+    },
+    {
+      "id": "politics_006",
+      "name": "Bertie Ahern",
+      "category": "Politics",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/politics_006_bertieahern.png",
+      "baseStats": {
+        "strength": 55,
+        "agility": 60,
+        "constitution": 65
+      },
+      "trait": {
+        "name": "Celtic Tiger",
+        "description": "Passive: gains +5% Strength for each turn the battle has been ongoing"
+      },
+      "move": {
+        "name": "Good Friday Handshake",
+        "description": "Active: stuns target for 1 turn"
+      },
+      "lore": "Dublin-born Taoiseach during Ireland's Celtic Tiger era and co-signatory of the Good Friday Agreement."
+    },
+    {
+      "id": "politics_007",
+      "name": "Michael D. Higgins",
+      "category": "Politics",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/politics_007_michaeldhiggins.png",
+      "baseStats": {
+        "strength": 35,
+        "agility": 45,
+        "constitution": 62
+      },
+      "trait": {
+        "name": "Poet President",
+        "description": "Passive: Arts ally cards in deck gain +5% Constitution"
+      },
+      "move": {
+        "name": "Inspiring Address",
+        "description": "Active: boosts all ally card Constitution by 8% for 1 turn"
+      },
+      "lore": "Galway-born poet and politician, serving as Ireland's ninth and current President."
+    },
+    {
+      "id": "politics_008",
+      "name": "Seán Lemass",
+      "category": "Politics",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/politics_008_seanlemass.png",
+      "baseStats": {
+        "strength": 45,
+        "agility": 50,
+        "constitution": 60
+      },
+      "trait": {
+        "name": "Economic Moderniser",
+        "description": "Passive: coins earned from all sources increased by 10%"
+      },
+      "move": {
+        "name": "Programme for Economic Expansion",
+        "description": "Active: boosts all ally card Strength by 5% for 2 turns"
+      },
+      "lore": "Dublin-born Taoiseach who modernised Ireland's economy in the 1960s, transforming the country."
+    },
+    {
+      "id": "politics_009",
+      "name": "Enda Kenny",
+      "category": "Politics",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/politics_009_endakenny.png",
+      "baseStats": {
+        "strength": 42,
+        "agility": 48,
+        "constitution": 58
+      },
+      "trait": {
+        "name": "Recovery",
+        "description": "Passive: if this card enters battle with any debuffs, remove one immediately"
+      },
+      "move": {
+        "name": "Bailout Exit",
+        "description": "Active: removes one debuff from all ally cards"
+      },
+      "lore": "Mayo-born Taoiseach who led Ireland through its EU-IMF bailout recovery with international credibility."
+    },
+    {
+      "id": "politics_010",
+      "name": "Catharine Connolly",
+      "category": "Politics",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/politics_010_catharineconnolly.png",
+      "baseStats": {
+        "strength": 40,
+        "agility": 48,
+        "constitution": 58
+      },
+      "trait": {
+        "name": "Independent Voice",
+        "description": "Passive: this card cannot be silenced or have its move blocked"
+      },
+      "move": {
+        "name": "Plain Speaking",
+        "description": "Active: deals moderate damage, ignores 20% of target Constitution"
+      },
+      "lore": "Galway TD and Leas-Cheann Comhairle, known for her outspoken advocacy on social justice issues."
+    },
+    {
+      "id": "filmtv_001",
+      "name": "Brendan Gleeson",
+      "category": "Film/TV",
+      "rarity": "Legendary",
+      "rarityMultiplier": 1.5,
+      "image": "assets/cards/filmtv_001_brendangleeson.png",
+      "baseStats": {
+        "strength": 72,
+        "agility": 52,
+        "constitution": 80
+      },
+      "trait": {
+        "name": "Scene Stealer",
+        "description": "Passive: when this card enters battle, all opposing cards lose 5% Agility"
+      },
+      "move": {
+        "name": "In Bruges",
+        "description": "Active: deals heavy damage with a chance to stun target for 1 turn"
+      },
+      "lore": "Dublin-born actor celebrated for In Bruges, Braveheart, and his Emmy-winning portrayal of Mad-Eye Moody."
+    },
+    {
+      "id": "filmtv_002",
+      "name": "Cillian Murphy",
+      "category": "Film/TV",
+      "rarity": "Epic",
+      "rarityMultiplier": 1.3,
+      "image": "assets/cards/filmtv_002_cillianmurphy.png",
+      "baseStats": {
+        "strength": 65,
+        "agility": 70,
+        "constitution": 62
+      },
+      "trait": {
+        "name": "Peaky Blinder",
+        "description": "Passive: this card has a 15% chance to avoid any incoming attack"
+      },
+      "move": {
+        "name": "By Order Of",
+        "description": "Active: intimidates target, reducing their Strength by 15% for 2 turns"
+      },
+      "lore": "Cork-born actor and Academy Award winner for Oppenheimer, known globally as Tommy Shelby."
+    },
+    {
+      "id": "filmtv_003",
+      "name": "Saoirse Ronan",
+      "category": "Film/TV",
+      "rarity": "Epic",
+      "rarityMultiplier": 1.3,
+      "image": "assets/cards/filmtv_003_saoirseronan.png",
+      "baseStats": {
+        "strength": 60,
+        "agility": 68,
+        "constitution": 64
+      },
+      "trait": {
+        "name": "Four Nominations",
+        "description": "Passive: gains +5% to all stats for each battle this card has won"
+      },
+      "move": {
+        "name": "Brooklyn",
+        "description": "Active: boosts own Constitution and Agility simultaneously"
+      },
+      "lore": "New York-born Irish actress and four-time Oscar nominee, one of the most acclaimed of her generation."
+    },
+    {
+      "id": "filmtv_004",
+      "name": "Pierce Brosnan",
+      "category": "Film/TV",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/filmtv_004_piercebrosnan.png",
+      "baseStats": {
+        "strength": 58,
+        "agility": 65,
+        "constitution": 58
+      },
+      "trait": {
+        "name": "Bond",
+        "description": "Passive: never reveals own stat values to opposing player"
+      },
+      "move": {
+        "name": "Shaken Not Stirred",
+        "description": "Active: precise attack dealing guaranteed moderate damage"
+      },
+      "lore": "Navan-born actor and the fifth James Bond, one of the most internationally recognisable Irish stars."
+    },
+    {
+      "id": "filmtv_005",
+      "name": "Colm Meaney",
+      "category": "Film/TV",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/filmtv_005_colmmeaney.png",
+      "baseStats": {
+        "strength": 52,
+        "agility": 58,
+        "constitution": 62
+      },
+      "trait": {
+        "name": "Chief O'Brien",
+        "description": "Passive: this card never suffers technical failures on its moves"
+      },
+      "move": {
+        "name": "The Commitments",
+        "description": "Active: boosts Strength of all ally Music category cards by 10%"
+      },
+      "lore": "Dublin-born actor beloved for Star Trek and The Commitments, one of Ireland's most prolific stars."
+    },
+    {
+      "id": "filmtv_006",
+      "name": "Gay Byrne",
+      "category": "Film/TV",
+      "rarity": "Rare",
+      "rarityMultiplier": 1.15,
+      "image": "assets/cards/filmtv_006_gaybyrne.png",
+      "baseStats": {
+        "strength": 48,
+        "agility": 60,
+        "constitution": 65
+      },
+      "trait": {
+        "name": "The Late Late",
+        "description": "Passive: the first opposing card each battle has its stats revealed"
+      },
+      "move": {
+        "name": "Nation Holds Its Breath",
+        "description": "Active: stuns target for 1 turn while boosting own Constitution"
+      },
+      "lore": "Dublin broadcaster who hosted The Late Late Show for 37 years, shaping modern Irish public life."
+    },
+    {
+      "id": "filmtv_007",
+      "name": "Andrew Scott",
+      "category": "Film/TV",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/filmtv_007_andrewscott.png",
+      "baseStats": {
+        "strength": 45,
+        "agility": 60,
+        "constitution": 50
+      },
+      "trait": {
+        "name": "Hot Priest",
+        "description": "Passive: 20% chance to charm target, causing them to lose their next move"
+      },
+      "move": {
+        "name": "I'm the Devil",
+        "description": "Active: unpredictable attack with high variance — very high or very low damage"
+      },
+      "lore": "Dublin-born actor known for Fleabag, Sherlock, and All of Us Strangers."
+    },
+    {
+      "id": "filmtv_008",
+      "name": "Maureen O'Hara",
+      "category": "Film/TV",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/filmtv_008_maureenohara.png",
+      "baseStats": {
+        "strength": 48,
+        "agility": 52,
+        "constitution": 55
+      },
+      "trait": {
+        "name": "Technicolor Star",
+        "description": "Passive: this card's image stats cannot be debuffed by opposing moves"
+      },
+      "move": {
+        "name": "The Quiet Man",
+        "description": "Active: reduces target Agility and deals moderate damage"
+      },
+      "lore": "Dublin-born Hollywood golden age actress, known for The Quiet Man and her iconic red hair."
+    },
+    {
+      "id": "filmtv_009",
+      "name": "Michael Gambon",
+      "category": "Film/TV",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/filmtv_009_michaelgambon.png",
+      "baseStats": {
+        "strength": 50,
+        "agility": 44,
+        "constitution": 58
+      },
+      "trait": {
+        "name": "Dumbledore",
+        "description": "Passive: ally cards gain +5% Constitution on entering battle after this one"
+      },
+      "move": {
+        "name": "Calm Authority",
+        "description": "Active: reduces all opposing card Agility by 8% for 1 turn"
+      },
+      "lore": "Dublin-born actor beloved as Dumbledore in Harry Potter and across decades of stage and screen."
+    },
+    {
+      "id": "filmtv_010",
+      "name": "Tom Vaughan-Lawlor",
+      "category": "Film/TV",
+      "rarity": "Common",
+      "rarityMultiplier": 1,
+      "image": "assets/cards/filmtv_010_tomvaughanlawlor.png",
+      "baseStats": {
+        "strength": 45,
+        "agility": 55,
+        "constitution": 50
+      },
+      "trait": {
+        "name": "Nidge",
+        "description": "Passive: +10% Strength when facing a card with higher rarity"
+      },
+      "move": {
+        "name": "Love/Hate",
+        "description": "Active: deals damage scaled to the gap between this card's and target's Strength"
+      },
+      "lore": "Dublin actor known for Love/Hate and Avengers: Infinity War, one of Ireland's most intense screen presences."
     }
   ]
 }
